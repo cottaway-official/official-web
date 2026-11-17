@@ -1,0 +1,45 @@
+.hero-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 7px 20px;
+  max-width: 610px;
+  margin-top: 52px;
+  padding-top: 17px;
+  border-top: 1px solid var(--line);
+}
+
+.hero-contact-label {
+  width: 100%;
+  margin-bottom: 4px;
+  color: #7f8980;
+  font: 9px var(--mono);
+  letter-spacing: .1em;
+}
+
+.hero-contact a {
+  color: var(--paper);
+  font: 600 clamp(18px, 2vw, 27px) var(--display);
+  letter-spacing: -.05em;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.hero-contact a:hover { color: var(--lime); }
+
+.hero-contact a + a {
+  color: var(--lime);
+  font-size: clamp(14px, 1.45vw, 19px);
+  font-weight: 500;
+  letter-spacing: -.03em;
+}
+
+@media (max-width: 640px) {
+  .hero-contact {
+    gap: 6px 13px;
+    margin-top: 42px;
+  }
+
+  .hero-contact a { font-size: 21px; }
+  .hero-contact a + a { font-size: 14px; }
+}

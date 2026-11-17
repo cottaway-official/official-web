@@ -84,7 +84,7 @@ export default function HomePage() {
       <SiteInteractions />
       <div className="topline">
         <span><i className="status-dot" /> COTTAWAY PRIVATE LIMITED</span>
-        <span className="topline-right">EST. 2024 <span className="slash">/</span> KERALA, INDIA</span>
+        <span className="topline-right">EST. 2026 <span className="slash">/</span> KERALA, INDIA</span>
       </div>
 
       <header className="nav-wrap" id="top">
@@ -105,6 +105,11 @@ export default function HomePage() {
             <h1 id="hero-title">Technology that keeps <em>businesses</em> moving.</h1>
             <p className="hero-intro">We build clear, dependable software for the people doing the real work — from growing teams to thriving gyms.</p>
             <div className="hero-actions"><a className="button button-lime" href="#gymatrix">Explore Gymatrix <span>↗</span></a><a className="text-link" href="#contact">Talk to our team <span>→</span></a></div>
+            <div className="hero-contact" aria-label="Cottaway contact details">
+              <span className="hero-contact-label">LET&apos;S BUILD SOMETHING USEFUL</span>
+              <a href="tel:+919744832367">+91 97448 32367</a>
+              <a href="mailto:contact@cottaway.com">contact@cottaway.com</a>
+            </div>
           </div>
           <div className="hero-art reveal delay-1" aria-label="Cottaway builds software for gyms and growing businesses">
             <div className="hero-image" aria-hidden="true" /><div className="image-wash" aria-hidden="true" />
