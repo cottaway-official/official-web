@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import "./contact.css";
 import "./motion.css";
+import "./seo.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://cottaway.com";
 
@@ -45,6 +46,7 @@ export const metadata: Metadata = {
     images: ["/opengraph-image"],
   },
   robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  formatDetection: { telephone: true, email: true, address: true },
 };
 
 export const viewport: Viewport = {

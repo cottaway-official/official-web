@@ -2,6 +2,21 @@ import SiteInteractions from "./site-interactions";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://cottaway.com";
 
+const faqItems = [
+  {
+    question: "Who is Cottaway Private Limited?",
+    answer: "Cottaway Private Limited is an IT company based in Kakkanad, Ernakulam, Kerala. We build practical digital products, business systems, and web applications for growing teams.",
+  },
+  {
+    question: "What is Gymatrix?",
+    answer: "Gymatrix is Cottaway's gym management software for memberships, payments, attendance, trainers, reporting, and the daily operations of a fitness business.",
+  },
+  {
+    question: "How can I contact Cottaway?",
+    answer: "You can contact Cottaway Private Limited at contact@cottaway.com or call +91 97448 32367. Our office is in Athani, Kakkanad, Ernakulam, Kerala — 682030.",
+  },
+];
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -12,6 +27,7 @@ const organizationSchema = {
       url: `${siteUrl}/`,
       email: "contact@cottaway.com",
       telephone: "+91-97448-32367",
+      foundingDate: "2026",
       logo: `${siteUrl}/icon.svg`,
       address: {
         "@type": "PostalAddress",
@@ -22,6 +38,14 @@ const organizationSchema = {
         addressCountry: "IN",
       },
       sameAs: ["https://gymatrix.in/"],
+      contactPoint: [{
+        "@type": "ContactPoint",
+        contactType: "customer service",
+        telephone: "+91-97448-32367",
+        email: "contact@cottaway.com",
+        areaServed: "IN",
+        availableLanguage: ["English", "Malayalam"],
+      }],
     },
     {
       "@type": "ProfessionalService",
@@ -32,6 +56,7 @@ const organizationSchema = {
       telephone: "+91-97448-32367",
       priceRange: "$$",
       serviceType: ["Software development", "IT services", "Business systems"],
+      areaServed: "IN",
       parentOrganization: { "@id": `${siteUrl}/#organization` },
       address: {
         "@type": "PostalAddress",
@@ -62,6 +87,16 @@ const organizationSchema = {
       publisher: { "@id": `${siteUrl}/#organization` },
       inLanguage: "en-IN",
     },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/#faq`,
+      url: `${siteUrl}/#faq`,
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: { "@type": "Answer", text: item.answer },
+      })),
+    },
   ],
 };
 
@@ -91,8 +126,8 @@ export default function HomePage() {
         <a className="brand" href="#top" aria-label="Cottaway home"><BrandMark /><Brand /></a>
         <nav className="main-nav" aria-label="Main navigation">
           <a href="#work">What we build</a>
-          <a href="#gymatrix">Gymatrix</a>
-          <a href="#company">Company</a>
+          <a href="/gymatrix">Gymatrix</a>
+          <a href="/company">Company</a>
         </nav>
         <a className="button button-small button-outline" href="#contact">Start a conversation <span>↗</span></a>
         <button className="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false"><span /><span /></button>
@@ -145,10 +180,12 @@ export default function HomePage() {
 
         <section className="services section-pad" aria-labelledby="services-title"><div className="section-meta"><span>05</span><span>WHAT WE DO</span><span>CAPABILITIES</span></div><div className="services-heading"><h2 className="reveal" id="services-title">We make the digital side of business <em>feel simple.</em></h2><p className="reveal delay-1">From a focused product to a tailored system, we combine thoughtful design and dependable technology.</p></div><div className="service-grid"><article className="service-card reveal"><span className="service-icon">↗</span><small>01 / PRODUCT</small><h3>Digital products</h3><p>Software that earns its place in your everyday workflow.</p><a href="#contact">Explore <span>↗</span></a></article><article className="service-card service-card-lime reveal delay-1"><span className="service-icon">✦</span><small>02 / ENGINEERING</small><h3>Web &amp; app development</h3><p>Fast, focused digital experiences built to last.</p><a href="#contact">Explore <span>↗</span></a></article><article className="service-card reveal delay-2"><span className="service-icon">⊙</span><small>03 / SYSTEMS</small><h3>Business systems</h3><p>Connected tools that give your team room to do better work.</p><a href="#contact">Explore <span>↗</span></a></article></div></section>
 
-        <section className="contact-section section-pad" id="contact" aria-labelledby="contact-title"><div className="contact-orbit orbit-one" aria-hidden="true" /><div className="contact-orbit orbit-two" aria-hidden="true" /><div className="section-meta contact-meta"><span>06</span><span>START SOMETHING USEFUL</span><span>CONTACT</span></div><div className="contact-grid"><h2 className="reveal" id="contact-title">Have a problem worth <em>solving?</em></h2><div className="contact-copy reveal delay-1"><p>Tell us where you want to go. We’ll help you find the clearest way to get there.</p><a className="button button-dark" href="mailto:contact@cottaway.com">contact@cottaway.com <span>↗</span></a></div></div><div className="contact-details"><a href="tel:+919744832367"><small>CALL US</small><strong>+91 97448 32367</strong></a><span className="contact-divider" /><address><small>VISIT US</small><strong>10/1744, 1st Floor, 1228<br />Sowbhagya Building, Athani<br />Kakkanad, Ernakulam — 682030, Kerala</strong></address></div></section>
+        <section className="faq-section section-pad" id="faq" aria-labelledby="faq-title"><div className="section-meta"><span>06</span><span>COMMON QUESTIONS</span><span>ABOUT COTTAWAY</span></div><div className="faq-heading"><h2 className="reveal" id="faq-title">A little more about <em>what we do.</em></h2><p className="reveal delay-1">The short version of who we are, what we build, and how to reach our team in Kerala.</p></div><div className="faq-list">{faqItems.map((item) => <details className="faq-item reveal" key={item.question}><summary>{item.question}<span>+</span></summary><p>{item.answer}</p></details>)}</div></section>
+
+        <section className="contact-section section-pad" id="contact" aria-labelledby="contact-title"><div className="contact-orbit orbit-one" aria-hidden="true" /><div className="contact-orbit orbit-two" aria-hidden="true" /><div className="section-meta contact-meta"><span>07</span><span>START SOMETHING USEFUL</span><span>CONTACT</span></div><div className="contact-grid"><h2 className="reveal" id="contact-title">Have a problem worth <em>solving?</em></h2><div className="contact-copy reveal delay-1"><p>Tell us where you want to go. We’ll help you find the clearest way to get there.</p><a className="button button-dark" href="mailto:contact@cottaway.com">contact@cottaway.com <span>↗</span></a></div></div><div className="contact-details"><a href="tel:+919744832367"><small>CALL US</small><strong>+91 97448 32367</strong></a><span className="contact-divider" /><address><small>VISIT US</small><strong>10/1744, 1st Floor, 1228<br />Sowbhagya Building, Athani<br />Kakkanad, Ernakulam — 682030, Kerala</strong></address></div></section>
       </main>
 
-      <footer className="footer section-pad"><a className="brand" href="#top"><BrandMark /><Brand /></a><p>Software with intent.<br />Built in Kerala, India.</p><div className="footer-links"><a href="https://gymatrix.in" target="_blank" rel="noreferrer">gymatrix.in ↗</a><a href="mailto:contact@cottaway.com">contact@cottaway.com</a><span>© 2026 Cottaway</span></div></footer>
+      <footer className="footer section-pad"><a className="brand" href="#top"><BrandMark /><Brand /></a><p>Software with intent.<br />Built in Kerala, India.</p><div className="footer-links"><a href="/company">About Cottaway ↗</a><a href="/gymatrix">Gymatrix overview ↗</a><a href="https://gymatrix.in" target="_blank" rel="noreferrer">gymatrix.in ↗</a><a href="mailto:contact@cottaway.com">contact@cottaway.com</a><span>© 2026 Cottaway</span></div></footer>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
     </div>
   );
