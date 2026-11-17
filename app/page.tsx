@@ -112,7 +112,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="hero-art reveal delay-1" aria-label="Cottaway builds software for gyms and growing businesses">
-            <div className="hero-image" aria-hidden="true" /><div className="image-wash" aria-hidden="true" />
+            <div className="hero-image parallax-layer" data-parallax="0.16" aria-hidden="true" /><div className="image-wash" aria-hidden="true" />
             <div className="hero-art-label label-top">PEOPLE × PRODUCT × PROGRESS</div><div className="hero-art-label label-bottom">BUILDING FROM KAKKANAD <span>↗</span></div>
             <div className="floating-card card-top"><span className="card-kicker">NOW BUILDING</span><strong>Gymatrix</strong><span className="card-arrow">↗</span></div>
             <div className="floating-card card-bottom"><span className="mini-chart" aria-hidden="true"><i /><i /><i /><i /><i /><i /><i /></span><span><small>ACTIVE MEMBERS</small><strong>2,840 <b>+18.4%</b></strong></span></div>
@@ -127,7 +127,7 @@ export default function HomePage() {
         </section>
 
         <section className="product-section" id="gymatrix" aria-labelledby="gymatrix-title">
-          <div className="product-image product-image-one" role="img" aria-label="Athlete training in a modern gym" />
+          <div className="product-image product-image-one parallax-layer" data-parallax="0.12" role="img" aria-label="Athlete training in a modern gym" />
           <div className="product-content section-pad">
             <div className="section-meta meta-dark"><span>03</span><span>OUR MAIN PRODUCT</span><span>GYM MANAGEMENT / SAAS</span></div>
             <div className="product-grid"><div className="product-title reveal"><span className="product-number">01</span><h2 id="gymatrix-title">Run your gym like a <em>business.</em></h2></div><div className="product-description reveal delay-1"><p>Gymatrix brings memberships, payments, attendance, trainers, and day-to-day operations into one calm, powerful workspace.</p><a className="button button-dark" href="https://gymatrix.in" target="_blank" rel="noreferrer">Visit gymatrix.in <span>↗</span></a></div></div>
@@ -139,7 +139,7 @@ export default function HomePage() {
         </section>
 
         <section className="feature-section" id="work" aria-labelledby="features-title">
-          <div className="feature-image" role="img" aria-label="People working out in a gym" />
+          <div className="feature-image parallax-layer" data-parallax="0.14" role="img" aria-label="People working out in a gym" />
           <div className="feature-content section-pad"><div className="section-meta"><span>04</span><span>WHY GYMATRIX</span><span>MADE FOR MOMENTUM</span></div><h2 className="reveal" id="features-title">Everything you need.<br /><em>Nothing in the way.</em></h2><div className="feature-list"><article className="feature-item reveal"><span>01</span><div><h3>One clear view</h3><p>See members, revenue, retention, and daily activity without digging through spreadsheets.</p></div><span className="item-plus">+</span></article><article className="feature-item reveal"><span>02</span><div><h3>Built for your team</h3><p>Simple enough for the front desk. Powerful enough for the owner.</p></div><span className="item-plus">+</span></article><article className="feature-item reveal"><span>03</span><div><h3>Ready to grow</h3><p>Automate the repeatable, so your people can focus on the relationships that matter.</p></div><span className="item-plus">+</span></article></div></div>
         </section>
 

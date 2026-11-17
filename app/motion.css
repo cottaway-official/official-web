@@ -1,0 +1,26 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
+.parallax-layer {
+  --parallax-y: 0px;
+  transform: translate3d(0, var(--parallax-y), 0) scale(1.08);
+  transform-origin: center;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .parallax-layer {
+    transform: none;
+    will-change: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
